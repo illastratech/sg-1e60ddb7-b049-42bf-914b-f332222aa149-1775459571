@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    
+    /* Brand Colors — lifted vs deep midnight for a brighter marketing look */
+    --brand-navy: 210 45% 16%;
+    --brand-blue: 217 82% 60%;
+    --brand-green: 142 71% 49%;
+    
+    /* Core Theme */
+    --background: 210 45% 16%;
+    --foreground: 0 0% 100%;
+    --card: 210 38% 21%;
+    --card-foreground: 0 0% 100%;
+    --popover: 210 38% 21%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 217 82% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 32% 26%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 32% 26%;
+    --muted-foreground: 210 20% 82%;
+    --accent: 217 82% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 22% 38%;
+    --input: 210 22% 38%;
+    --ring: 217 82% 60%;
+    
+    /* Custom Shadows */
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.22), 0 2px 4px -2px rgb(0 0 0 / 0.18);
+    --shadow-glow: 0 0 24px rgb(64 130 255 / 0.22);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Site-wide horizontal inset; sections use this for consistent left/right padding. */
+  .container {
+    @apply mx-auto w-full max-w-none px-6 sm:px-10 lg:px-14 xl:px-20;
+  }
+  
+  .btn-primary {
+    @apply text-primary-foreground font-semibold px-6 py-3 rounded-full transition-all duration-200 inline-flex items-center justify-center gap-2 shadow-md shadow-primary/25;
+    background: linear-gradient(
+      135deg,
+      hsl(217 88% 56%) 0%,
+      hsl(217 82% 50%) 50%,
+      hsl(220 72% 44%) 100%
+    );
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.08);
+  }
+
+  .btn-whatsapp {
+    @apply bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 inline-flex items-center justify-center gap-2 shadow-md shadow-black/20;
+  }
+  
+  .stat-card {
+    @apply bg-card/50 border border-border rounded-xl p-6 backdrop-blur-sm;
+  }
+  
+  .feature-card {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-[var(--shadow-glow)];
+  }
+}
