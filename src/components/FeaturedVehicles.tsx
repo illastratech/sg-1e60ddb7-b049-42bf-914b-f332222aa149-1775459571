@@ -28,7 +28,7 @@ const vehicles = [
 
 export function FeaturedVehicles() {
   return (
-    <section className="w-full bg-secondary/30 py-16 md:py-20">
+    <section className="w-full bg-gradient-to-b from-[#0A1D36] to-[#09182E] py-16 md:py-20">
       <div className="container">
         <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between md:mb-12">
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
@@ -36,7 +36,7 @@ export function FeaturedVehicles() {
           </h2>
           <Link
             href="/inventory"
-            className="hidden items-center gap-2 font-medium text-primary transition-colors hover:text-primary/85 md:inline-flex"
+            className="hidden items-center gap-2 font-medium text-primary transition-colors hover:text-[#5EA2FF] md:inline-flex"
           >
             View All Imported Vehicles
             <ArrowRight className="h-4 w-4" aria-hidden />
@@ -58,7 +58,7 @@ export function FeaturedVehicles() {
               <div className="p-3 sm:p-6">
                 <h3 className="mb-1 font-display text-sm font-bold sm:mb-2 sm:text-xl">{vehicle.name}</h3>
                 <div className="flex items-center gap-2 text-muted-foreground">
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="h-4 w-4 text-[#5EA2FF]" />
                   <span className="text-sm">{vehicle.location}</span>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export function FeaturedVehicles() {
 
         <Link 
           href="/inventory" 
-          className="flex md:hidden items-center justify-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium mt-8"
+          className="mt-8 flex items-center justify-center gap-2 font-medium text-primary transition-colors hover:text-[#5EA2FF] md:hidden"
         >
           View All Imported Vehicles
           <ArrowRight className="w-4 h-4" />

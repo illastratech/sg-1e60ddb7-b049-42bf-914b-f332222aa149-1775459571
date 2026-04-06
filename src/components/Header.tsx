@@ -13,7 +13,7 @@ import {
 
 const nav = [
   { href: "/", label: "Home" },
-  { href: "/inventory", label: "Inventory" },
+  { href: "/inventory", label: "Imported Vehicles" },
   { href: "/import-process", label: "Import Process" },
   { href: "/reviews", label: "Reviews" },
   { href: "/about", label: "About" },
@@ -22,8 +22,8 @@ const nav = [
 const PHONE_HREF = "tel:+94776783241";
 const PHONE_DISPLAY = "+94 77 678 3241";
 
-/** Add your file as `public/logo.png` (or change path / use `.svg`). */
-const LOGO_SRC = "/logo.png";
+/** Brand mark in `public/` — `.svg` or `.png`. */
+const LOGO_SRC = "/logo.svg";
 
 function LogoMark() {
   return (
@@ -41,7 +41,7 @@ function LogoMark() {
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/18 bg-[hsl(210_42%_14%)]/92 backdrop-blur-md">
+    <header className="navbar-glass fixed top-0 left-0 right-0 z-50">
       <nav className="container relative flex w-full items-center justify-between py-3 md:py-4">
         <Link href="/" className="flex items-center gap-3">
           <LogoMark />
@@ -60,7 +60,11 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
+              className={`text-sm font-medium transition-colors ${
+                item.href === "/"
+                  ? "text-[hsl(221_100%_59%)]"
+                  : "text-[hsl(219_45%_81%)] hover:text-[#5EA2FF]"
+              }`}
             >
               {item.label}
             </Link>
@@ -70,7 +74,7 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={PHONE_HREF}
-            className="hidden items-center gap-2 rounded-full bg-[hsl(142_71%_45%)] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[hsl(142_71%_40%)] sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full border border-[rgba(95,149,255,0.28)] bg-[rgba(47,107,255,0.08)] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(12,28,52,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[rgba(47,107,255,0.16)] hover:border-[rgba(95,149,255,0.5)] sm:inline-flex"
           >
             <Phone className="h-4 w-4 shrink-0" aria-hidden />
             {PHONE_DISPLAY}
@@ -80,7 +84,7 @@ export function Header() {
             <SheetTrigger asChild>
               <button
                 type="button"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition hover:bg-white/10 lg:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition hover:bg-[rgba(47,107,255,0.16)] lg:hidden"
                 aria-label="Open menu"
               >
                 <Menu className="h-6 w-6" />
@@ -88,7 +92,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[min(100%,320px)] border-border bg-[hsl(210_38%_18%)]"
+              className="w-[min(100%,320px)] border-[rgba(95,149,255,0.18)] bg-[rgba(10,29,54,0.95)]"
             >
               <SheetHeader className="text-left">
                 <SheetTitle className="font-display text-lg">Menu</SheetTitle>
@@ -98,14 +102,14 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-lg px-3 py-3 text-base font-medium text-foreground transition hover:bg-white/10"
+                    className="rounded-lg px-3 py-3 text-base font-medium text-foreground transition hover:bg-[rgba(47,107,255,0.16)]"
                   >
                     {item.label}
                   </Link>
                 ))}
                 <a
                   href={PHONE_HREF}
-                  className="mt-4 flex items-center justify-center gap-2 rounded-full bg-[hsl(142_71%_45%)] px-4 py-3 text-sm font-semibold text-white"
+                  className="mt-4 flex items-center justify-center gap-2 rounded-full border border-[rgba(95,149,255,0.28)] bg-[rgba(47,107,255,0.08)] px-4 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[rgba(47,107,255,0.16)] hover:border-[rgba(95,149,255,0.5)]"
                 >
                   <Phone className="h-4 w-4" />
                   {PHONE_DISPLAY}

@@ -2,7 +2,7 @@ import { Gavel, ListChecks, FileCheck, Handshake } from "lucide-react";
 
 export function Features() {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="w-full bg-gradient-to-b from-[#061427] to-[#081A33] py-16 md:py-24">
       <div className="container">
         <div className="mb-14 text-center md:mb-16">
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
@@ -16,8 +16,8 @@ export function Features() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div className="feature-card">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10">
-              <Gavel className="h-8 w-8 text-primary" />
+            <div className="icon-node mb-4 h-16 w-16">
+              <Gavel className="h-8 w-8" />
             </div>
             <h3 className="text-xl font-display font-bold mb-2">
               Direct Access to<br />Japanese Auctions
@@ -28,8 +28,8 @@ export function Features() {
           </div>
 
           <div className="feature-card">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10">
-              <ListChecks className="h-8 w-8 text-primary" />
+            <div className="icon-node mb-4 h-16 w-16">
+              <ListChecks className="h-8 w-8" />
             </div>
             <h3 className="text-xl font-display font-bold mb-2">
               Transparent Pricing
@@ -40,8 +40,8 @@ export function Features() {
           </div>
 
           <div className="feature-card">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10">
-              <FileCheck className="h-8 w-8 text-primary" />
+            <div className="icon-node mb-4 h-16 w-16">
+              <FileCheck className="h-8 w-8" />
             </div>
             <h3 className="text-xl font-display font-bold mb-2">
               Verified Auction<br />Sheets Only
@@ -52,8 +52,8 @@ export function Features() {
           </div>
 
           <div className="feature-card">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10">
-              <Handshake className="h-8 w-8 text-primary" />
+            <div className="icon-node mb-4 h-16 w-16">
+              <Handshake className="h-8 w-8" />
             </div>
             <h3 className="text-xl font-display font-bold mb-2">
               End-to-End<br />Import Handling
